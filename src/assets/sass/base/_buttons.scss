@@ -1,0 +1,17 @@
+.btn {
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 14px;
+  transition: 0.3s;
+  border-radius:4px;
+  cursor:pointer;
+  &.white {
+    color:$text;
+    background-color:$white;
+  }
+  &.red {
+    color:$white;
+    background-color:$primery;
+  }
+}

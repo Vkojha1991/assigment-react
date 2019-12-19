@@ -1,0 +1,134 @@
+.people-info {
+    overflow-y:auto;
+  }
+  
+  .chat-listing {
+    padding:18px 15px 18px 15px;
+    border-bottom:1px solid #eeeeee;
+    flex:1 1 380px;
+    max-width:380px;
+    color:$text;
+    display: flex;
+    align-items: center;		
+    h2 {
+      padding:0;
+      margin:0;
+      font-size:20px;
+      flex:1;
+      font-weight:500
+    }
+    &-count {
+    }
+  }
+  .user-listing {
+    padding:0;
+    max-height:580px;
+  
+  .user {
+    border-bottom:1px solid $br-gr;
+    padding: 20px 15px 15px 15px;
+    display:flex;
+    flex-flow: row wrap;		
+    position:relative;
+    cursor:pointer;
+    &:last-child {
+      border:none;
+    }
+    &:before,&:after {
+          content:"";
+          position:absolute;
+          bottom:-1px;
+          height:1px;
+          background:$white;
+          width:15px;
+        }
+        &:before {
+      left:0
+        }
+    &:after {
+      right:0;
+    }
+    
+    &-photo {
+    flex:0 0 72px;
+    margin-left:10px;
+      img {
+        border-radius:50%
+      }
+    }
+    &-rightcol {
+      flex:1;
+      padding:15px 0 0 15px
+    }
+    h3 {
+      padding:0;
+      margin:0 0 5px;
+      font-size:20px;
+      color:$text;
+      font-weight:500
+    }
+    &-lastmessage {
+      font-size:14px;
+      color:$text;
+      font-weight:$regular;
+    }
+    &-chatdata {
+        font-size:12px;
+        padding:24px 0 0 0;
+        flex:1 100%;
+        display:flex;
+        .left-col,.right-col {
+        flex:1
+        }
+        &-graph, &-time{
+        padding-left:10px;
+        margin-left:10px;
+        
+        position:relative;
+        &:before {
+          content:"|";
+          position:absolute;
+          left:-2px;
+          top:-2px;
+          font-size:14px;
+        }
+      }  
+    }
+    &.active {
+    border-bottom:1px solid $primery;
+    background:#fefafa;
+    .active {
+  
+    }
+    h3 {
+      color:#d5766c
+    }
+    &:before,&:after {
+      background:#fefafa
+    }
+  }
+  }
+  
+  }
+
+  @include devicebreak(tablet) {
+    .user-listing {
+      .user {
+        padding-left:10px;
+        padding-right:10px;
+        .left-col, .right-col {
+          flex:auto;
+        }
+      }
+    }
+  }
+
+  @include devicebreak(mobile) { 
+     .user-chatdata {
+        flex-direction: column;
+        .right-col {
+          text-align:left;
+          margin-top: 15px;
+        }
+     }
+  }

@@ -1,0 +1,136 @@
+.left-panel {
+    text-align:center;
+    flex:1 1 320px;
+    max-width:320px;
+    color:$text;
+  }
+  
+  .profile-details {
+    text-align:center;
+    .profile-pic {
+      margin:0 auto 24px;
+      max-width:180px;
+      max-height:180px;
+      width:100%;
+      position: relative;
+      img {
+        border-radius:50%;
+      }
+      &::after {
+        display:inline-block;
+        position: absolute;
+        width:39px;
+        height:34px;
+        content:'';
+        background:url('../src/assets/img/profile-heart.png') no-repeat center center;
+        bottom: 0px;
+        right: 15px;
+      }
+    }
+    .name {
+      color:rgba($black, 0.8);
+      font-weight:24px;
+      font-weight:$medium;
+      margin-bottom:10px;
+    }
+    .desc {
+      margin:0 0 10px;
+      small {
+        color:rgba($text, 0.9);
+      }
+    }
+  }
+
+  .actions-group-aside {
+    ul {
+      li {
+        display:block;
+        a {
+          text-decoration:none;
+          color:$text;
+          display: inline-block;
+          font-size:14px;
+          text-align:left;
+        }
+      }
+    }
+    >ul {
+      >li {
+        margin-bottom:18px;
+        a {
+          min-width:200px;
+          &.active, &:hover {
+            background-color:$primery;
+            color:$white;
+          }
+          .fa {
+            margin-right:12px;
+            font-size:18px;
+          }
+        }
+        ul {
+          li {
+            a {
+               text-align:left;
+               padding-left:52px;
+               font-size:13px;
+               margin-top:12px;
+               &.active, &:hover {
+                 color:$primery;
+                 background:none;
+               }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .aside-nav {
+    position: absolute;
+    top: 20px;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    font-size: 36px;
+    z-index: 99;
+    color:$primery;
+    display:none;
+  }
+
+  .aside-nav-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 32px;
+    height: 32px;
+    line-height: 0;
+    text-align: center;
+    font-size: 36px;
+    z-index: 99;
+    color:$primery;
+    display:none;
+  }
+
+  @include devicebreak(tablet) {
+    .left-panel {
+       position:fixed;
+       left:-320px;
+       top:0;
+       background-color:$light-gr;
+       z-index:99;
+       height:100%;
+       overflow-y:auto;
+       padding:30px 15px 10px;
+       transition:all 0.3s ease-in-out;
+       &.show {
+         left:0;
+         transition:all 0.3s ease-in-out;
+         box-shadow:0 0 10px rgba($black, 0.2);
+       }
+    }
+    .aside-nav, .aside-nav-close {
+      display: inline-block;
+      cursor: pointer;
+    }
+  }

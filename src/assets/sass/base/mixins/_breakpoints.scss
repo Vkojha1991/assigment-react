@@ -1,0 +1,29 @@
+/* Media query for different resolution */
+
+@mixin devicebreak($point) {
+
+  @if $point == mobile {
+      @media screen and (max-width:767px) {
+          @content;
+      }
+  }
+
+  @else if $point == tablet {
+      @media screen and (max-width:992px) {
+          @content;
+      }
+  }
+
+  @else if $point == desktop {
+    @media screen and (max-width:1300px) {
+        @content;
+    }
+}
+
+  @else {
+      @content;
+  }
+
+}
+
+
